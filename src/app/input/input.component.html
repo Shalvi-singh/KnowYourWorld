@@ -1,0 +1,19 @@
+<div class="searchbutton">
+  <input type="search"  #searchInput id="searchcountry" name="searchcountry">
+
+  <input type="button"  value="search" (click)="onButtonclick(searchInput)" >
+
+</div>
+
+<div class="output-containers">
+  <div>Capital:{{capital}}</div>
+  <div>population:{{population}}</div>
+  <div>position<br>
+  longitude:{{longitude}}
+<br>
+latitude:{{latitude}}</div>
+<div><img id="image" src="{{flag}}">Flag:</div>
+<div>Currency:{{currency}}</div>
+
+</div>
+
