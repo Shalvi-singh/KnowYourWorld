@@ -1,10 +1,8 @@
 import { Component, Output,EventEmitter} from '@angular/core';
 import { ServiceService } from '../service.service';
-import { forkJoin } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
-
-
-
+import { error } from 'node:console';
+ 
 
 @Component({
   selector: 'app-input',
@@ -39,7 +37,14 @@ constructor(private  Serviceservice:ServiceService){}
    this.Serviceservice.capital(country).subscribe((data: any)=>{
     //  console.log("data",data);
       this.capital=data.data.capital;
-  });
+  },
+   ((error:HttpErrorResponse)=>{
+    if(error.status===404){
+      alert("COUNTRY NOT FOUND.\nYou may try another name of the country");
+    } else{
+      console.error('An error occurred:',error.message);
+    }
+   }));
 
     this.Serviceservice.population(country).subscribe((data:any)=>{
     //  console.log("data1",data);

@@ -1,19 +1,19 @@
-<div class="searchbutton">
-  <input type="search"  #searchInput id="searchcountry" name="searchcountry">
+<div class="search-container">
+  <input type="search" class="searchtext" placeholder="Enter country name" #searchInput id="searchcountry" name="searchcountry">
 
-  <input type="button"  value="search" (click)="onButtonclick(searchInput)" >
+  <input type="button" class="searchbutton" value="search" (click)="onButtonclick(searchInput)" >
 
 </div>
 
 <div class="output-containers">
-  <div>Capital:{{capital}}</div>
-  <div>population:{{population}}</div>
-  <div>position<br>
+  <div class="box">Capital:{{capital}}</div>
+  <div class="box">population:{{population}}</div>
+  <div class="box">position<br>
   longitude:{{longitude}}
 <br>
 latitude:{{latitude}}</div>
-<div><img id="image" src="{{flag}}">Flag:</div>
-<div>Currency:{{currency}}</div>
+<div class="box">Currency:{{currency}}</div>
+<div class="box">Flag:<img id="image" src="{{flag}}"></div>
 
 </div>
 
